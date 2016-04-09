@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-7 21:50:51 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.whoami.po.order" table="ORDER">
+        <id name="orderID" type="int">
+            <column name="ORDERID" />
+            <generator class="assigned" />
+        </id>
+        <property name="userID" type="int">
+            <column name="USERID" />
+        </property>
+        <property name="submitTime" type="java.lang.String">
+            <column name="SUBMITTIME" />
+        </property>
+        <property name="outItemsTime" type="java.lang.String">
+            <column name="OUTITEMSTIME" />
+        </property>
+        <property name="totlePrice" type="java.lang.String">
+            <column name="TOTLEPRICE" />
+        </property>
+        <property name="leaveLanguage" type="java.lang.String">
+            <column name="LEAVELANGUAGE" />
+        </property>
+        <property name="userAddress" type="java.lang.String">
+            <column name="USERADDRESS" />
+        </property>
+        <property name="isPayOff" type="int">
+            <column name="ISPAYOFF" />
+        </property>
+        <property name="isOutItems" type="int">
+            <column name="ISOUTITEMS" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+	<bean id="itemsDoHelp" class="com.whoami.SpringHelper.itemsSpringDoHelp">
+		<property name="ims" ref="ims"></property>
+		<property name="imsDo" ref="imsDo"></property>
+	</bean>
+	<bean id="ims" class="com.whoami.po.items"></bean>
+	<bean id="imsDo" class="com.whoami.daodo.itemsDaoDo"></bean>
+</beans>

@@ -2,3 +2,10 @@
 /whoami_message.sql
 /whoami_photos.sql
 /whoami_user.sql
+/com/
+/hibernate.cfg.xml
+/leavelanguage.hbm.xml
+/message.hbm.xml
+/photos.hbm.xml
+/struts.xml
+/user.hbm.xml

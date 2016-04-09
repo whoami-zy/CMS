@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-10-7 23:29:40 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.whoami.po.user" table="USER">
+		<id name="u_id" type="int">
+			<column name="U_ID" />
+			<generator class="native" />
+		</id>
+		<property name="u_name" type="java.lang.String">
+			<column name="U_NAME" />
+		</property>
+		<property name="u_password" type="java.lang.String">
+			<column name="U_PASSWORD" />
+		</property>
+		<property name="u_email" type="java.lang.String">
+			<column name="U_EMAIL" />
+		</property>
+		<property name="u_phone" type="java.lang.String">
+			<column name="U_PHONE" />
+		</property>
+	</class>
+</hibernate-mapping>

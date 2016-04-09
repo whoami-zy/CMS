@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-12-2 17:02:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.whoami.po.items" table="ITEMS">
+        <id name="itemsID" type="int">
+            <column name="ITEMSID" />
+            <generator class="assigned" />
+        </id>
+        <property name="itemsName" type="java.lang.String">
+            <column name="ITEMSNAME" />
+        </property>
+        <property name="itemsPrice" type="float">
+            <column name="ITEMSPRICE" />
+        </property>
+        <property name="itemsAllNum" type="int">
+            <column name="ITEMSALLNUM" />
+        </property>
+        <property name="itemsLeaveNum" type="int">
+            <column name="ITEMSLEAVENUM" />
+        </property>
+        <property name="itemsTime" type="java.util.Date">
+            <column name="ITEMSTIME" />
+        </property>
+        <property name="image" type="java.lang.String">
+            <column name="IMAGE" />
+        </property>
+        <property name="itemsFactory" type="java.lang.String">
+            <column name="ITEMSFACTORY" />
+        </property>
+        <property name="itemsAbout" type="java.lang.String">
+            <column name="ITEMSABOUT" />
+        </property>
+        <property name="itemsClassKey" type="int">
+            <column name="ITEMSCLASSKEY" />
+        </property>
+    </class>
+</hibernate-mapping>

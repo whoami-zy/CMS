@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.custom.i18n.resources" value="message" /> 
+     <constant name="struts.i18n.encoding" value="UTF-8"></constant>   
+    <!-- 上传过程中临时文件存放目录 -->
+    <constant name="struts.multipart.saveDir" value=""></constant>
+	<package name="default" namespace="/" extends="struts-default">
+		<default-action-ref name="error"></default-action-ref>
+		<action name="error">
+			<result>/error.jsp</result>
+		</action>
+		<action name="user_*" method="{1}" class="com.whoami.struts.userAction">
+			<result name="userLoginSuccess">/user/welcome.jsp</result>
+			<result name="userLoginFalse">/login.jsp</result>
+			<result name="userRegisterSuccess">/user/welcomeRegister.jsp</result>
+			<result name="userRegisterFalse">/login.jsp</result>
+			<result name="userUpdataSuccess">/user/userUpdataSuccess.jsp</result>
+			<result name="userUpdataFalse">/user/userUpdataFalse.jsp</result>
+			<result name="userRegisterSuccess2">/user/registerSuccess.jsp</result>
+			<result name="userRegisterFalse2">/user/registerFalse.jsp</result>
+			<result name="loginOutSuccess">/login.jsp</result>
+			<result name="loginOutFalse">/index.jsp</result>
+		</action>
+		<action name="admin_*" method="{1}" class="com.whoami.struts.adminAction">
+			<result name="adminLoginSuccess">adminJsp/welcome.jsp</result>
+			<result name="adminLoginFalse">/adminLogin.jsp</result>
+			<result name="adminAddSuccess">adminJsp/adminAddSuccess.jsp</result>
+			<result name="adminAddFalse">adminJsp/adminAddFalse.jsp</result>
+			<result name="adminByIdSuccess">adminJsp/adminByIdSuccess.jsp</result>
+			<result name="adminByIdFalse">adminJsp/adminByIdFalse.jsp</result>
+			<result name="viewByAllSuccess">adminJsp/adminByAll.jsp</result>
+			<result name="deleteAdminSuccess">adminJsp/adminSuccess.jsp</result>
+			<result name="deleteAdminFalse">adminJsp/adminFalse.jsp</result>
+			<result name="updateAdminSuccess">adminJsp/adminSuccess.jsp</result>
+			<result name="updateAdminFalse">adminJsp/adminFalse.jsp</result>
+			<result name="input">/adminLogin.jsp</result>
+		</action>
+		<action name="itemsclass_*" method="{1}"
+			class="com.whoami.struts.itemsclassAction">
+			<result name="addSuccess">itemsClass/addSuccess.jsp</result>
+			<result name="addFalse">itemsClass/addFalse.jsp</result>
+			<result name="deleteSuccess">itemsClass/deleteSuccess.jsp</result>
+			<result name="deleteFalse">itemsClass/deleteFalse.jsp</result>
+			<result name="itemsClassByNameSuccess">itemsClass/viewByName.jsp</result>
+			<result name="itemsClassByNameFalse">itemsClass/viewByNameFalse.jsp</result>
+			<result name="itemsClassByAllSuccess">itemsClass/viewByAll.jsp</result>
+
+		</action>
+		
+		<action name="items_*" method="{1}" class="com.whoami.struts.itemsAction">
+				<result name="addSuccess">items/addSuccess.jsp</result>
+				<result name="addFalse">items/addFalse.jsp</result>
+				<result name="itemsClassByAllSuccess">items/viewItemsByAll.jsp</result>
+				<result name="itemsByNameOrTimeSuccess">items/viewItemsByNameOrTime.jsp</result>
+				<result name="itemsByClassSuccess">items/viewItemsByClass.jsp</result>
+				<result name="deleteSuccess">items/doSuccess.jsp</result>
+				<result name="deleteFalse">items/doFalse.jsp</result>
+				<result name="updateSuccess">items/doSuccess.jsp</result>
+				<result name="updateFalse">items/doFalse.jsp</result>
+				<interceptor-ref name="fileUpload">
+                 <!-- 设置文件上传大小 -->
+                <param name="maximumSize">409600</param>
+                 <!-- 设置文件上传类型 
+                 <param name="allowedTypes">
+                     application/vnd.ms-powerpoint
+                 </param>
+                 -->
+             </interceptor-ref>
+             <!-- 自定义了拦截器后必手动定义默认的拦截器，否则默认的拦截器不会被执行 -->
+             <interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		
+		<action name="leavelanguage_*" method="{1}" class="com.whoami.struts.leaveLanguangeAction">
+				<result name="addSuccess">leaveLanguage/addSuccess.jsp</result>
+				<result name="addFalse">leaveLanguage/addFalse.jsp</result>
+				<result name="deleteSuccess">leaveLanguage/doSuccess.jsp</result>
+				<result name="deleteFalse">leaveLanguage/doFalse.jsp</result>
+				<result name="viewByNameOrTimeSuccess">leaveLanguage/viewLeaveLanguage.jsp</result>
+				<result name="viewByAllSuccess">leaveLanguage/viewLeaveLanguage.jsp</result>
+				
+		</action>
+		
+	</package>
+
+</struts>
